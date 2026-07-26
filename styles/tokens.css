@@ -1,0 +1,98 @@
+/* ================================================================
+   HelioTwin — Design Tokens
+   All visual decisions are defined here. No hardcoded values
+   anywhere else in the stylesheet.
+   ================================================================ */
+
+:root {
+
+  /* ── NEUTRALS ────────────────────────────────────────────────── */
+  --c-white:          #FFFFFF;
+  --c-surface:        #F4F5F6;
+  --c-surface-alt:    #EAECEF;
+  --c-border:         #D1D5DB;
+  --c-border-subtle:  #E5E7EB;
+
+  /* ── RAIL CHROME (structural dark sidebar) ───────────────────── */
+  --c-rail-bg:        #1E2328;
+  --c-rail-text:      #9CA3AF;
+  --c-rail-active:    #F3F4F6;
+  --c-rail-hover:     #2D3440;
+  --c-rail-indicator: #2563EB;
+  --c-rail-divider:   #2D3440;
+
+  /* ── TEXT ────────────────────────────────────────────────────── */
+  --c-text-primary:   #111827;
+  --c-text-secondary: #4B5563;
+  --c-text-tertiary:  #9CA3AF;
+  --c-text-inverse:   #F9FAFB;
+
+  /* ── INTERACTION — blue only ─────────────────────────────────── */
+  --c-blue-600:       #2563EB;
+  --c-blue-700:       #1D4ED8;
+  --c-blue-100:       #DBEAFE;
+  --c-blue-200:       #BFDBFE;
+
+  /* ── ENVIRONMENTAL — green only ──────────────────────────────── */
+  --c-green-600:      #16A34A;
+  --c-green-700:      #15803D;
+  --c-green-100:      #DCFCE7;
+
+  /* ── WARNING — amber only ────────────────────────────────────── */
+  --c-amber-600:      #D97706;
+  --c-amber-100:      #FEF3C7;
+
+  /* ── CRITICAL — red only ─────────────────────────────────────── */
+  --c-red-600:        #DC2626;
+  --c-red-100:        #FEE2E2;
+
+  /* ── MAP ANALYSIS COLOURS ────────────────────────────────────── */
+  --c-shadow-fill:    rgba(15, 20, 30, 0.32);
+  --c-study-area:     rgba(37, 99, 235, 0.10);
+  --c-study-border:   rgba(37, 99, 235, 0.70);
+
+  /* ── TYPOGRAPHY ──────────────────────────────────────────────── */
+  --font-sans:        'Inter', system-ui, sans-serif;
+  --font-mono:        'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Type scale — nothing exceeds 16px in application UI */
+  --text-xs:   11px;
+  --text-sm:   12px;
+  --text-base: 13px;
+  --text-md:   14px;
+  --text-lg:   16px;
+
+  /* Weights */
+  --w-regular:  400;
+  --w-medium:   500;
+  --w-semibold: 600;
+
+  /* Letter spacing */
+  --ls-label:  0.05em;   /* section headers: 11px uppercase */
+  --ls-normal: 0;
+
+  /* ── SPACING ─────────────────────────────────────────────────── */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+
+  /* ── LAYOUT DIMENSIONS ───────────────────────────────────────── */
+  --rail-collapsed:    56px;
+  --rail-expanded:     220px;
+  --panel-width:       320px;
+  --topbar-height:     40px;
+  --statusbar-height:  32px;
+
+  /* ── BORDERS & RADIUS ────────────────────────────────────────── */
+  --radius-sm: 3px;
+  --radius-md: 4px;
+
+  /* ── TRANSITIONS ─────────────────────────────────────────────── */
+  --t-fast:   80ms ease-out;
+  --t-normal: 120ms ease-out;
+  --t-rail:   150ms ease-out;
+}

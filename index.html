@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelioTwin — Urban Sunlight Intelligence Platform</title>
+  <meta name="description" content="HelioTwin provides solar exposure analysis and shadow impact assessment for urban planners, architects, and municipalities. Sunlight intelligence for the built environment.">
+  <meta name="author" content="HelioTwin">
+  <!-- Force no-cache so stale JS is never served during development -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <!-- Fonts: Inter (UI) + IBM Plex Mono (measurements) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- MapLibre GL JS v4 — vector map engine with PMTiles support -->
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+  <!-- SunCalc — Meeus astronomical algorithms for sun position -->
+  <script src="https://cdn.jsdelivr.net/npm/suncalc@1.9.0/suncalc.js"></script>
+
+  <!-- Turf.js — geospatial computation (area, bbox, union) -->
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7.1.0/turf.min.js"></script>
+
+  <!-- Chart.js — data visualisation for exposure and seasonal charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+  <!-- jsPDF — PDF report generation -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+  <!-- Application Styles -->
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+  <!--
+    HelioTwin Application Shell
+    Layout: [rail] [main: topbar + map + statusbar] [workspace-panel]
+  -->
+  <div id="app">
+
+    <!-- Workflow rail: 5-step navigation, left edge -->
+    <aside id="workflow-rail" role="navigation" aria-label="Analysis workflow"></aside>
+
+    <!-- Main area: topbar, map viewport, status bar -->
+    <main id="main">
+      <header id="topbar" role="banner"></header>
+
+      <div id="map-container">
+        <!-- MapLibre GL JS renders into #map -->
+        <div id="map" role="application" aria-label="Map viewport"></div>
+        <!-- Loading indicator: visible until map 'load' event fires -->
+        <div id="map-loading" class="map-loading">
+          <div class="map-loading-spinner"></div>
+          <span>Loading map tiles…</span>
+        </div>
+        <!-- Canvas and HTML overlays (sun compass, map tools, legend) -->
+        <div id="map-overlays" aria-hidden="true"></div>
+      </div>
+
+      <footer id="status-bar" role="contentinfo" aria-label="Live solar data"></footer>
+    </main>
+
+    <!-- Analysis workspace panel: 320px, right edge -->
+    <aside id="workspace-panel" role="complementary" aria-label="Workspace panel"></aside>
+
+  </div>
+
+  <!-- Bootstrap the application as an ES module -->
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
